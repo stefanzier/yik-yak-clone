@@ -7,7 +7,6 @@ class Header extends Component {
     return(
       <AppBar
         title="Yik Yak"
-        titleStyle={{textAlign: "center"}}
       /> 
    );
   }

@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 import Header from './components/header'; 
 import PostContainer from './components/post_container';
+import { Posts } from '../imports/collections/posts';
 
 const App = () => {
   return (
-    <MuiThemeProvider muiTheme={getMuiTheme()}>
+    <MuiThemeProvider>
       <div>
         <Header />
         <PostContainer />

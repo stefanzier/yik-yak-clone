@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
+import { createContainer } from 'meteor/react-meteor-data';
 
-import Posts from './posts';
+import { Posts } from '../../imports/collections/posts.js';
+
+import Post from './post';
 import NewPost from './new_post';
 
 class PostContainer extends Component {
@@ -8,10 +11,17 @@ class PostContainer extends Component {
     return(
       <main>
         <NewPost />
-        <Posts />
+        <div className="">
+          {this.props.posts.map((post) =>
+            <Post key={post._id} post={post} /> )}
+        </div>
       </main>
     );
   }
 }
 
-export default PostContainer;
+export default createContainer(() => {
+  Meteor.subscribe('posts');
+  
+  return { posts: Posts.find({}).fetch() };
+}, PostContainer);
