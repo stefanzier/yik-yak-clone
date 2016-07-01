@@ -1,1 +1,21 @@
-/* CSS declarations go here */
+ /*CSS declarations go here */
+ body {
+  margin: 0px;
+ }
+
+/* Header Component */
+.header-container {
+  height: 60px;
+  width: 100%;
+  background-color: #0DD5B2;
+  position: fixed;
+} 
+
+.brand-name {
+  text-align: center;
+  color: #fff;
+  font-size: 20px;
+  position: relative;
+  top: 35%;
+  transform: translateY(-100%);
+}
