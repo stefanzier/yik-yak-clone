@@ -18,9 +18,9 @@ class NewPost extends Component {
   handleSubmit(event) {
     event.preventDefault();
 
-    Meteor.call('posts.insert', this.refs.textInput.getValue(), (error) => {
-      if (error) {
-        this.setState({ error: 'Unable to publish post' });
+    Meteor.call('posts.insert', this.refs.textInput.getValue(), () => {
+      if (this.refs.textInput.getValue() == '') {
+        this.setState({ error: 'Please write a post' });
       } else {
         this.setState({ 
           error: '',
@@ -41,6 +41,7 @@ class NewPost extends Component {
               hintText="What's on your mind?"
               floatingLabelText="Write a new post"
               ref="textInput"
+              errorText={this.state.error}
               />
             </div>
           </Card>

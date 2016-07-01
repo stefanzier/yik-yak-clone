@@ -8,9 +8,10 @@
 /* Header Component */
 
 /* Post Component */
-main {
+.timestamp {
+  color: grey;
+  font-size: 10px;
 }
-
 /* NewPost Component*/
 
 .new-post-container {
