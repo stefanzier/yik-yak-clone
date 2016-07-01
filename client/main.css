@@ -2,21 +2,35 @@
  body {
   margin: 0px;
   font-family: Roboto;
+  background-color: #ECF0F1;
  }
 
 /* Header Component */
-.header-container {
-  height: 60px;
-  width: 100%;
-  background-color: #0DD5B2;
-  position: fixed;
-} 
 
-.brand-name {
+/* Post Component */
+main {
+}
+
+/* NewPost Component*/
+
+.new-post-container {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.text-field-container {
+  margin: 0 auto; 
   text-align: center;
-  color: #fff;
-  font-size: 20px;
-  position: relative;
-  top: 35%;
-  transform: translateY(-100%);
+  margin-top: 10px;
+}
+
+.text-field-container div {
+  width: 80% !important;
+  text-align: left;
+}
+
+.post-container {
+  margin-top: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
 }

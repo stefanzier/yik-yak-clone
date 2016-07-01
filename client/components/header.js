@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
+import AppBar from 'material-ui/AppBar';
+import { FindInPage } from 'material-ui/svg-icons/action/find-in-page';
 
 class Header extends Component {
   render() {
     return(
-      <header className="main-header">
-        <h1>Yik Yak</h1>
-      </header>
-    );
+      <AppBar
+        title="Yik Yak"
+        titleStyle={{textAlign: "center"}}
+      /> 
+   );
   }
 }
 
