@@ -2,13 +2,17 @@ import React, { Component } from 'react';
 import TextField from 'material-ui/TextField';
 import { Card } from 'material-ui/Card';
 import RaisedButton from 'material-ui/RaisedButton';
+import Snackbar from 'material-ui/Snackbar';
 import ReactDOM from 'react-dom';
 
 class NewPost extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { error: '' };
+    this.state = { 
+      error: '', 
+      open: false 
+    };
   }
 
   handleSubmit(event) {
@@ -18,7 +22,10 @@ class NewPost extends Component {
       if (error) {
         this.setState({ error: 'Unable to publish post' });
       } else {
-        this.setState({ error: '' });
+        this.setState({ 
+          error: '',
+          open: true
+        });
         document.querySelector('form').reset();
       }
     }); 
@@ -38,6 +45,11 @@ class NewPost extends Component {
             </div>
           </Card>
         </form>
+        <Snackbar
+          open={this.state.open}
+          message="Post added to the feed!"
+          autoHideDuration={4000}
+        />
       </div>
     );
   }
