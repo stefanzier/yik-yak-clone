@@ -23,5 +23,5 @@ class PostContainer extends Component {
 export default createContainer(() => {
   Meteor.subscribe('posts');
   
-  return { posts: Posts.find({}).fetch() };
+  return { posts: Posts.find({}).fetch().reverse() };
 }, PostContainer);
